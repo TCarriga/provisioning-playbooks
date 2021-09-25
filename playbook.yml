@@ -1,0 +1,22 @@
+---
+- name: Provision a Vagrant box with useful tools
+  hosts: all
+  become: true
+  tasks:
+    - name: Update all packages
+      ansible.builtin.package:
+        name: '*'
+        state: latest
+
+    - name: Install packages
+      ansible.builtin.package:
+        name:
+        - python3
+        - emacs-nox
+        - vim
+        - podman
+        state: present
+    - name: Install Python packages
+      ansible.builtin.pip:
+        name:
+        - yamllint
