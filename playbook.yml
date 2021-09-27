@@ -11,12 +11,12 @@
     - name: Install packages
       ansible.builtin.package:
         name:
-        - python3
-        - emacs-nox
-        - vim
-        - podman
+          - python3
+          - emacs-nox
+          - vim
+          - podman
         state: present
     - name: Install Python packages
       ansible.builtin.pip:
         name:
-        - yamllint
+          - yamllint
